@@ -1,0 +1,17 @@
+<hr>
+<h4 class="md-caption">เพิ่มรายชื่อผู้ร่วมชะตากรรม</h4>
+<input type="text"class="form-control"
+#valuename required  [formControl]="fcon">
+
+<button class="m-2 btn-primary"
+(click)="adduser()">Add Friend</button>
+<button class=" btn-primary"
+routerLink="home/"
+(click)="senddata()">Next</button>
+
+<hr>
+<h3 class="btn-success form-control">All User</h3>
+
+<ul>
+  <li *ngFor="let n of name">{{n}}</li>
+</ul>

@@ -1,0 +1,45 @@
+<button class="btn-primary"
+routerLink="">back</button>
+<hr>
+
+<div class="row align-items-start">
+
+    <div class="col">
+      <label  for="names">Name</label>
+    </div>
+    <div class="col-6">
+      <label for="list">List</label>
+    </div>
+    <div class="col">
+      <label for="price">Price</label>
+    </div>
+    <div class="col">
+
+    </div>
+ </div>
+
+  <div class="row ">
+
+  <div class="col ">
+
+<select name="" id="names" class="form-select" >
+  <option [ngValue]="null" disabled>Select</option>
+  <option *ngFor="let n of name"
+  form-control> {{n}}</option>
+</select>
+  </div>
+  <div class="col-6">
+
+    <input type="text" id="list" class="form-control" >
+  </div>
+  <div class="col">
+    <input type="text" id="price" class="form-control">
+  </div>
+  <div class="col ">
+  </div>
+
+</div>
+
+<button class="btn-primary form-control mt-3"
+>Add List</button>
+<hr>
