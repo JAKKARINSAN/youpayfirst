@@ -13,8 +13,9 @@ export interface User {
 
 export interface ListPrice {
   Name: string,
-  list: string,
-  price: number,
+  List: string,
+  Price: number,
 }
 
 export const name: User[] = [];
+export const alllist: ListPrice[] = [];

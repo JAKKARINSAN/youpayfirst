@@ -1,45 +1,57 @@
-<button class="btn-primary"
+
+<button class="btn btn-primary"
 routerLink="">back</button>
 <hr>
 
-<div class="row align-items-start">
+<div
+
+class="row align-items-start">
 
     <div class="col">
-      <label  for="names">Name</label>
+      <label  for="Name">Name</label>
     </div>
     <div class="col-6">
-      <label for="list">List</label>
+      <label for="List">List</label>
     </div>
     <div class="col">
-      <label for="price">Price</label>
+      <label for="Price">Price</label>
     </div>
-    <div class="col">
 
-    </div>
- </div>
+ </div >
 
-  <div class="row ">
+  <div [formGroup]="fg" class="row ">
 
   <div class="col ">
 
-<select name="" id="names" class="form-select" >
-  <option [ngValue]="null" disabled>Select</option>
+<select class="form-select" #teams>
+  <option defalt disabled>Select</option>
   <option *ngFor="let n of name"
-  form-control> {{n}}</option>
+  >{{n}}</option>
 </select>
+
   </div>
   <div class="col-6">
 
-    <input type="text" id="list" class="form-control" >
+    <input type="text" id="List" class="form-control"
+    formControlName="List">
   </div>
   <div class="col">
-    <input type="text" id="price" class="form-control">
+    <input type="text" id="Price" class="form-control"
+    formControlName="Price">
   </div>
-  <div class="col ">
-  </div>
+
 
 </div>
 
-<button class="btn-primary form-control mt-3"
->Add List</button>
+<button class="btn btn-primary form-control mt-3"
+(click)="addlist(teams.value)">Add List</button>
 <hr>
+
+<ol>
+  <li *ngFor="let n of alllist">
+    <div class="row">
+      <div class="col">ชื่อ: {{n.Name}}</div>
+      <div class="col">รายการ: {{n.List}} </div>
+      <div class="col">ราคา: {{n.Price}}</div></div></li>
+</ol>
+

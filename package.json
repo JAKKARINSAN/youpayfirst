@@ -1,12 +1,15 @@
 {
   "name": "youpayfirst",
   "version": "0.0.0",
+
+
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
+
   },
   "private": true,
   "dependencies": {
@@ -18,6 +21,7 @@
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
+    "@popperjs/core": "^2.11.5",
     "bootstrap": "^5.2.0",
     "bootstrap-icons": "^1.9.1",
     "rxjs": "~7.5.0",
@@ -38,4 +42,5 @@
     "karma-jasmine-html-reporter": "~1.7.0",
     "typescript": "~4.6.2"
   }
+
 }
