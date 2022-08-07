@@ -26,13 +26,13 @@ export class GetdataComponent implements OnInit {
     let y =""
     const x = this.fg.value
     if( x.Price > 0  ){y = 'เป็นจริง'} else {y = 'เท็จ'}
-    if (y = "เท็จ")
+    if (y === "เท็จ")
     {this.message = 'ใส่ราคาว่าจ่ายไปเท่าไรสิ ไม่ใส่จะคำนวณยังไง?'
   return}
   this.selected = value;
   this.fg.patchValue ({Name: this.selected})
   this.alllist.push(this.fg.value)
-
+  this.message=''
 }
   RemoveElementFromObjectArray(n:number){
     alllist.splice(n,1);
