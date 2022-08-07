@@ -1,8 +1,8 @@
 
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { FunctionService } from '../function.service';
-import { ListPrice, User } from '../variable.service';
+import { ListPrice ,name, alllist, total } from '../variable.service';
 
 @Component({
   selector: 'app-getdata',
@@ -10,35 +10,36 @@ import { ListPrice, User } from '../variable.service';
   styleUrls: ['./getdata.component.scss']
 })
 export class GetdataComponent implements OnInit {
-  name: User[] = this.fs.name
+  name = name
   selected= ''
-  alllist: ListPrice[] = this.fs.alllist;
+  alllist: ListPrice[] = alllist;
   message=''
   fg = new FormGroup({
   Name: new FormControl(this.selected),
-  List : new FormControl(""),
-  Price : new FormControl("")
+  List : new FormControl(),
+  Price : new FormControl()
   })
 
   constructor(private fs: FunctionService) { }
 
   addlist(value:string){
+    let y =""
+    const x = this.fg.value
+    if( x.Price > 0  ){y = 'เป็นจริง'} else {y = 'เท็จ'}
+    if (y = "เท็จ")
+    {this.message = 'ใส่ราคาว่าจ่ายไปเท่าไรสิ ไม่ใส่จะคำนวณยังไง?'
+  return}
   this.selected = value;
   this.fg.patchValue ({Name: this.selected})
-  this.fs.alllist.push(this.fg.value)
-   console.log(this.alllist)
-   console.log(this.fs.alllist)
+  this.alllist.push(this.fg.value)
+
 }
+  RemoveElementFromObjectArray(n:number){
+    alllist.splice(n,1);
+  }
 
 
   ngOnInit(): void {
-    this.fs.getlist()
-    .subscribe({
-      next: n => this.alllist = n,
-      error: err => this.message = err.message
-    });
-  }
-
 }
 
-
+}

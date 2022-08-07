@@ -2,6 +2,13 @@
 <button class="btn btn-primary"
 routerLink="">back</button>
 <hr>
+<p class="itim">ขั้นตอนที่ 1.  เลือกชื่อที่ต้องการจากรายการ (ต้อมีข้อมูล)
+<br>ขั้นตอนที่ 2.  ใส่รายการ "List" ว่าเป็นค่าใช้จ่ายเรื่องอะไร (มีหรือไม่มีก็ได้)
+<br>ขั้นตอนที่ 3.  ใส่ราคาที่จ่ายไป (ต้องมีข้อมูล)
+<br>ขั้นตอนที่ 4.  คลิกที่ "Add List" เพื่อเพิ่มข้อมูล เมื่อเพิ่มรายการจนครบ ให้คลิกที่ "Next" เพื่อไปหน้าสรุป
+<br><span class="red-t">{{message}}</span>
+</p>
+<hr>
 
 <div
 
@@ -43,15 +50,20 @@ class="row align-items-start">
 
 </div>
 
-<button class="btn btn-primary form-control mt-3"
-(click)="addlist(teams.value)">Add List</button>
+<div class="row">
+  <div class="col"><button class="btn btn-primary form-control mt-3"
+(click)="addlist(teams.value)">Add List</button></div>
+<div class="col"><button class="btn btn-primary form-control mt-3"
+routerLink="terminal/">Next</button></div></div>
 <hr>
 
 <ol>
-  <li *ngFor="let n of alllist">
-    <div class="row">
-      <div class="col">ชื่อ: {{n.Name}}</div>
-      <div class="col">รายการ: {{n.List}} </div>
-      <div class="col">ราคา: {{n.Price}}</div></div></li>
+  <li *ngFor="let n of alllist;let i = index">
+    <div class="row justify-content-between ">
+      <div class="col-md">ชื่อ: {{n.Name}}</div>
+      <div class="col-xl">รายการ: {{n.List}} </div>
+      <div class="col-md">ราคา: {{n.Price}}</div>
+      <div class="col-sm"><i class="bi bi-x-square-fill red-c "
+        (click)="RemoveElementFromObjectArray(i)"></i></div></div></li>
 </ol>
 

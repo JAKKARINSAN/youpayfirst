@@ -1,4 +1,6 @@
 
+@import url(https://fonts.google.com/specimen/Itim?subset=thai#standard-styles);
+
 .btn-primary {
   background-color: #e399ad;
 }
@@ -13,4 +15,20 @@
 h4 {
   color: #5190A2;
   font-weight: bold;
+}
+
+.red-c{
+  color: rgb(112, 1, 1);
+}
+
+.itim{
+  font-family: 'Itim', cursive;
+  font-size: 18px;
+
+}
+
+.red-t{
+  color: rgb(112, 1, 1);
+  font-family: 'Itim', cursive;
+  font-size: 16px;
 }

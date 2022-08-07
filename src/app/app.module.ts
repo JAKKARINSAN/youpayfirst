@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { AdduserComponent } from './adduser/adduser.component';
 import { GetdataComponent } from './getdata/getdata.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TerminalComponent } from './terminal/terminal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdduserComponent,
-    GetdataComponent
+    GetdataComponent,
+    TerminalComponent
   ],
   imports: [
     BrowserModule,

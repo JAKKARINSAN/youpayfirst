@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
+
 import { FunctionService } from '../function.service';
-import { User } from '../variable.service';
+import {  name} from '../variable.service';
 
 @Component({
   selector: 'app-adduser',
@@ -12,22 +13,37 @@ export class AdduserComponent implements OnInit {
 
   constructor(private fs: FunctionService) { }
   message = '';
-  name: User[] = [];
+  name = name
   fcon = new FormControl('');
+
   adduser(){
-    this.name.push (this.fcon.value);
+    const x = String( this.fcon.value)
+    if(x.length===0){
+      this.message = "พิมพ์ก่อนสิ ค่อยกด Add"
+      return
+    }
+    let z = 0
+    const count = name.filter(function(item){
+       if (item === x) {
+        z += 1
+      }
+    });
+    if(z !== 0){
+      this.message = "Add ชื่อนี้ไปแล้วไง"
+      return
+    }
+    name.push (this.fcon.value);
     this.fcon.setValue('');
-  };
-  senddata(){
-  this.fs.name = this.name
-  console.log("test1"+this.fs.name)
+    this.message = '';
+  ;}
+
+  deletename(n:string){
+    name.forEach((element,index)=>{
+      if(element==n) name.splice(index,1);
+   });
   }
   ngOnInit(): void {
-    this.fs.getname()
-    .subscribe({
-      next: n => this.name = n,
-      error: err => this.message = err.message
-    });
+
   }
 
 }

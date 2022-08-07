@@ -1,5 +1,9 @@
+
 <hr>
-<h4 class="md-caption">NameList</h4>
+<p class="itim">เริ่มจากพิมพ์ชื่อสมาชิก แล้วคลิกที่ "Add Name" จนครบ
+  <br>ถ้าพิมพ์ชื่อผิดสามารถคลิก "x" หลังชื่อเพื่อลบได้
+  <br>เมื่อได้รายชื่อที่ต้องการจนครบแล้ว จากนั้นคลิกที่ "Next" </p>
+<h4 class="md-caption">NameList  <span class="red-t">{{message}}</span></h4>
 <input type="text"class="form-control inputbg"
 #valuename required  [formControl]="fcon">
 
@@ -7,11 +11,14 @@
 (click)="adduser()">Add Name</button>
 <button class="btn btn-primary"
 routerLink="home/"
-(click)="senddata()">Next</button>
+>Next</button>
 
 <hr>
 <h3 class="btn btn-success form-control">All User</h3>
 
-<ul>
-  <li *ngFor="let n of name">{{n}}</li>
-</ul>
+<ol>
+  <li class="form-control"
+   *ngFor="let n of name ; let i = index"
+   ><div class="row justify-content-between "><div class="col-4" >{{i+1}}.  {{n}}</div><div class="col-sm-1"><i class="bi bi-x-square-fill red-c "
+    (click)="deletename(n)"></i></div></div> </li>
+</ol>

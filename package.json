@@ -1,15 +1,12 @@
 {
   "name": "youpayfirst",
   "version": "0.0.0",
-
-
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
-
   },
   "private": true,
   "dependencies": {
@@ -42,5 +39,4 @@
     "karma-jasmine-html-reporter": "~1.7.0",
     "typescript": "~4.6.2"
   }
-
 }
