@@ -9,7 +9,7 @@
 <input type="text"class="form-control inputbg"
 #valuename required  [formControl]="fcon">
 
-<button class="m-2 btn btn-primary"
+<button class="m-2  btn btn-primary"
 (click)="adduser()">Add Name</button>
 <button class="btn btn-primary"
 routerLink="home/"
@@ -18,9 +18,9 @@ routerLink="home/"
 <hr>
 <h3 class="btn btn-success form-control">All User</h3>
 
-<ol class="form-group">
-  <dt class="form-control"
+<ul class="list-group">
+  <li class="list-group-item d-flex justify-content-between"
    *ngFor="let n of name ; let i = index"
-   ><div class="row justify-content-between "><div class="col" >{{i+1}}.  {{n}}</div><div class="col-sm-1"><i class="bi bi-x-square-fill red-c "
-    (click)="deletename(n)"></i></div></div> </dt>
-</ol>
+   ><div>{{i+1}}.  {{n}}</div>      <div><i class="bi bi-x-square-fill red-c "
+    (click)="deletename(n)"></i></div> </li>
+</ul>
