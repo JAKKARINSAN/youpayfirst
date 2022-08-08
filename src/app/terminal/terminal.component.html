@@ -1,12 +1,12 @@
-
-<button class="m-2 btn btn-primary" routerLink="">BAck To Add Name</button>
-<button class="m-2 btn btn-primary" routerLink="/home/"
->BAck To Add List</button>
+<div class=" d-flex justify-content-center">
+<button class="m-2 btn btn-primary" routerLink="/adduser">Back To Add Name</button>
+<button class="m-2 btn btn-primary" routerLink="/adduser/home/"
+>Back To Add List</button></div>
 <hr>
 <p class="row justify-content-center">สรุป</p>
-<ul>
-  <li class="form-control"> <div class="row"> <div class="col">Name</div><div class="col">Total</div><div class="col">Status</div><div class="col">Payment Amount</div></div></li>
-  <li class="form-control" *ngFor="let item of totals"> <div class="row">
+<ul class="list-group">
+  <li class="form-control list-group-item"> <div class="row"> <div class="col">Name</div><div class="col">Total</div><div class="col">Status</div><div class="col">Payment Amount</div></div></li>
+  <li class="form-control list-group-item" *ngFor="let item of totals"> <div class="row">
     <div class="col" [ngClass]="(item.Status === 'ได้คืน')?'green-c':'red-c'">{{item.Name}}</div>
     <div class="col" [ngClass]="(item.Status === 'ได้คืน')?'green-c':'red-c'">{{item.Price}}</div>
     <div class="col" [ngClass]="(item.Status === 'ได้คืน')?'green-c':'red-c'">{{item.Status}}</div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { FunctionService } from '../function.service';
 import {  name} from '../variable.service';
@@ -11,7 +12,9 @@ import {  name} from '../variable.service';
 })
 export class AdduserComponent implements OnInit {
 
-  constructor(private fs: FunctionService) { }
+  constructor(private fs: FunctionService,private route:Router
+    ) { }
+
   message = '';
   name = name
   fcon = new FormControl('');
@@ -36,7 +39,18 @@ export class AdduserComponent implements OnInit {
     this.fcon.setValue('');
     this.message = '';
   ;}
-
+  countname(){
+    if( name.length === 0){
+      this.message = "เพิ่มชื่อสักคนก่อนสิ"
+    }
+    if( name.length === 1){
+      this.message = "เพิ่มอีกชื่อสักคนก่อนสิ ถ้ามีชื่อเดียวจะหารค่าใช้จ่ายยังไง"
+    }
+    if( name.length > 1){
+      this.route.navigate(['/adduser/home']);
+      this.message = '';
+    }
+  }
   deletename(n:string){
     name.forEach((element,index)=>{
       if(element==n) name.splice(index,1);

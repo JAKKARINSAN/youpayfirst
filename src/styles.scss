@@ -1,9 +1,10 @@
-@import "~bootstrap/dist/css/bootstrap.min.css";
-@import "~bootstrap-icons/font/bootstrap-icons.css";
-@import url(https://fonts.google.com/specimen/Itim?subset=thai#standard-styles);
-body{
-  background-color: #e2e5f6;
-}
+// @import "~bootstrap/dist/css/bootstrap.min.css";
+// @import "~bootstrap-icons/font/bootstrap-icons.css";
+@import "~bootstrap/scss/bootstrap.scss";
+@import "~bootstrap-icons/font/bootstrap-icons.scss";
 h4{
   color: #5190A2
+}
+body , header  ,footer , h4 , .bg {
+  background-color: #e2e5f6;
 }

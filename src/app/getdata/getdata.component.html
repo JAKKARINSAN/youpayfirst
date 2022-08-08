@@ -1,6 +1,6 @@
 <div class=" d-flex justify-content-center">
 <button class="btn btn-primary  "
-routerLink="/adduser">back</button></div>
+routerLink="/adduser">Back To Add Name</button></div>
 <hr>
 <p class="itim">ขั้นตอนที่ 1.  เลือกชื่อที่ต้องการจากรายการ (ต้อมีข้อมูล)
 <br>ขั้นตอนที่ 2.  ใส่รายการ "List" ว่าเป็นค่าใช้จ่ายเรื่องอะไร (มีหรือไม่มีก็ได้)
@@ -54,11 +54,11 @@ class="row align-items-start">
   <div class="col"><button class="btn btn-primary form-control mt-3"
 (click)="addlist(teams.value)">Add List</button></div>
 <div class="col"><button class="btn btn-primary form-control mt-3"
-routerLink="terminal/">Next</button></div></div>
+(click)="gototerminal()">Next</button></div></div>
 <hr>
 
-<ol>
-  <li *ngFor="let n of alllist;let i = index">
+<ol class="list-group">
+  <li class='list-group-item' *ngFor="let n of alllist;let i = index">
     <div class="row justify-content-between ">
       <div class="col-md">ชื่อ: {{n.Name}}</div>
       <div class="col-xl">รายการ: {{n.List}} </div>

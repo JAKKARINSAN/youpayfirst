@@ -1,6 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { FunctionService } from '../function.service';
 import { ListPrice ,name, alllist, total } from '../variable.service';
 
@@ -20,7 +21,7 @@ export class GetdataComponent implements OnInit {
   Price : new FormControl()
   })
 
-  constructor(private fs: FunctionService) { }
+  constructor(private fs: FunctionService,private route:Router) { }
 
   addlist(value:string){
     let y =""
@@ -37,8 +38,15 @@ export class GetdataComponent implements OnInit {
   RemoveElementFromObjectArray(n:number){
     alllist.splice(n,1);
   }
-
-
+  gototerminal(){
+    if(alllist.length === 0){
+      this.message='เพิ่มข้อมูลสักรายการก่อนไหม ไม่มีข้อมูลจะหารยังไง'
+    }
+    if(alllist.length > 0){
+      this.route.navigate(['/adduser/home/terminal']);
+    }
+  }
+  // /adduser/home/terminal
   ngOnInit(): void {
 }
 
