@@ -21,7 +21,7 @@ export interface Listtotal {
   Name: string,
   Price: number,
   Status: string,
-  Pay: string
+  Pay: number
 }
 
 export const name: string[] = [];

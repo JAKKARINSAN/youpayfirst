@@ -32,9 +32,9 @@ export class FunctionService {
     var payB = averTotal - sum
 
     if(payB < 0 )
-    {var pay=String(Math.round(payB*-100)/100)
+    {var pay=Math.round(payB*-100)/100
   total.push({'Name': x , 'Price': sum , 'Status': 'ได้คืน', 'Pay': pay})} else
-  {var pay=String(Math.round(payB*100)/100)
+  {var pay=Math.round(payB*100)/100
   total.push({'Name': x , 'Price': sum , 'Status': 'จ่ายเพิ่ม', 'Pay': pay})}
   }
     // total.push({'Name': x.Name , 'Price': sum})}
