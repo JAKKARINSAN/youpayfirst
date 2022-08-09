@@ -22,8 +22,11 @@ export class TerminalComponent implements OnInit {
     console.log(sum)
     const l = this.paytowhos.findIndex(y => y.Status === 'จ่ายเพิ่ม')
     const o = this.paytowhos.findIndex(y => y.Status === 'ได้คืน')
-    console.log(this.paytowhos[l].Pay)
-    
+    if(this.paytowhos[l].Pay<this.paytowhos[o].Pay){
+      var q = this.paytowhos[l].Pay }
+      else{var q = this.paytowhos[o].Pay}
+    this.paytowhos[l].Pay =  this.paytowhos[l].Pay - q
+    this.paytowhos[o].Pay =  this.paytowhos[o].Pay - q
     // while (sum > 0){
 
     // }
