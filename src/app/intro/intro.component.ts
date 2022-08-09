@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-intro',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./intro.component.scss']
 })
 export class IntroComponent implements OnInit {
-
-  constructor() { }
+  w = window.innerWidth
+  h = window.innerHeight
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+    if( this.w < this.h) {
+          } else{
+            this.router.navigate(['/desktop']);
+          }
+    
   }
 
 }

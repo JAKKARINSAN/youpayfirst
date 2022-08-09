@@ -8,6 +8,7 @@ import { GetdataComponent } from './getdata/getdata.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TerminalComponent } from './terminal/terminal.component';
 import { IntroComponent } from './intro/intro.component';
+import { DesktopComponent } from './desktop/desktop.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { IntroComponent } from './intro/intro.component';
     AdduserComponent,
     GetdataComponent,
     TerminalComponent,
-    IntroComponent
+    IntroComponent,
+    DesktopComponent
   ],
   imports: [
     BrowserModule,
