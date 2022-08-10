@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FunctionService } from '../function.service';
-import { alllist, Listtotal, total, name } from '../variable.service';
+import { alllist, Listtotal, total, name, towho } from '../variable.service';
 
 
 @Component({
@@ -9,46 +9,16 @@ import { alllist, Listtotal, total, name } from '../variable.service';
   styleUrls: ['./terminal.component.scss']
 })
 export class TerminalComponent implements OnInit {
-  totals = total
-  paytowho = [ {Name: 'oak', Price: 50, Status: 'จ่ายเพิ่ม', Pay: 12.75},
- {Name: 'j', Price: 75, Status: 'ได้คืน', Pay: 12.25},
- {Name: 'id', Price: 60, Status: 'จ่ายเพิ่ม', Pay: 2.75},
- {Name: 'd', Price: 66, Status: 'ได้คืน', Pay: 3.25}]
- paytowhos:Listtotal[] = []
-  payto () {
-    this.paytowhos = this.paytowho
-    const sum = this.paytowhos.filter(item => item.Status === 'จ่ายเพิ่ม')
-    .reduce((sum, current) => sum + current.Pay , 0);
-    console.log(sum)
-    const l = this.paytowhos.findIndex(y => y.Status === 'จ่ายเพิ่ม')
-    const o = this.paytowhos.findIndex(y => y.Status === 'ได้คืน')
-    if(this.paytowhos[l].Pay<this.paytowhos[o].Pay){
-      var q = this.paytowhos[l].Pay }
-      else{var q = this.paytowhos[o].Pay}
-    this.paytowhos[l].Pay =  this.paytowhos[l].Pay - q
-    this.paytowhos[o].Pay =  this.paytowhos[o].Pay - q
-    // while (sum > 0){
-
-    // }
-  //   let i: number = 2;
-  // while (i < 4) {
-  //     console.log( "Block statement execution no." + i )
-  //     i++; // }
-
-}
-sumtotals(){
-  total.forEach((value,index)=>{
-    total.splice(0,total.length);})
-
-    this.fs.sumtotal()
-this.totals = total
-}
-
+  paytowhos = this.fs.paytowhos
+  ref(){
+    this.paytowhos = this.fs.paytowhos
+  }
   constructor(private fs: FunctionService) { }
 
   ngOnInit(): void {
-this.sumtotals()
-this.payto()
+this.fs.sumtotals()
+this.fs.payto()
+this.ref()
   }
 
 }

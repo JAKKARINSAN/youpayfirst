@@ -6,9 +6,11 @@
 <p class="row justify-content-center">สรุป</p>
 <ul class="list-group">
   <li class="form-control list-group-item"> <div class="row"> <div class="col">Name</div><div class="col">Total</div><div class="col">Status</div><div class="col">Payment Amount</div></div></li>
-  <li class="form-control list-group-item" *ngFor="let item of totals"> <div class="row">
+  <li class="form-control list-group-item" *ngFor="let item of paytowhos; let i of paytowhos"> <div class="row">
     <div class="col" [ngClass]="(item.Status === 'ได้คืน')?'green-c':'red-c'">{{item.Name}}</div>
     <div class="col" [ngClass]="(item.Status === 'ได้คืน')?'green-c':'red-c'">{{item.Price}}</div>
     <div class="col" [ngClass]="(item.Status === 'ได้คืน')?'green-c':'red-c'">{{item.Status}}</div>
-    <div class="col" [ngClass]="(item.Status === 'ได้คืน')?'green-c':'red-c'">{{item.Pay}}</div></div></li>
+    <div class="col" [ngClass]="(item.Status === 'ได้คืน')?'green-c':'red-c'">{{item.payment}}</div>
+    <div class="col" [ngClass]="(item.Status === 'ได้คืน')?'green-c':'red-c'">{{item.towho}}</div>
+  </div></li>
 </ul>

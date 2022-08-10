@@ -23,6 +23,14 @@ export interface Listtotal {
   Status: string,
   Pay: number
 }
+export interface towho {
+  Name: string,
+  Price: number,
+  Status: string,
+  Pay: number,
+  payment:number,
+  towho: string
+}
 
 export const name: string[] = [];
 export const alllist: ListPrice[] = [];

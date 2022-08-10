@@ -34,6 +34,7 @@ export class GetdataComponent implements OnInit {
   this.fg.patchValue ({Name: this.selected})
   this.alllist.push(this.fg.value)
   this.message=''
+  this.fg.patchValue ({Price: ''})
 }
   RemoveElementFromObjectArray(n:number){
     alllist.splice(n,1);
